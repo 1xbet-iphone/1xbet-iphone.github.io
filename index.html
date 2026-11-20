@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="yandex-verification" content="57caed124959b6ed">
+<title>1xBet на iPhone — веб-версия, установка и настройки iOS</title>
+<meta name="description" content="1xBet на iPhone: чем отличается мобильный сайт от приложения, как добавить страницу на экран Домой и что проверить при ошибках загрузки.">
+<meta name="robots" content="index, follow"><meta name="theme-color" content="#205583">
+<link rel="canonical" href="https://1xbet-iphone.github.io/"><link rel="icon" href="/img/favicon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/img/favicon.png">
+<meta property="og:type" content="website"><meta property="og:url" content="https://1xbet-iphone.github.io/"><meta property="og:title" content="1xBet на iPhone: практический справочник"><meta property="og:description" content="Мобильный сайт, ярлык в Safari и ответы на вопросы об iOS."><meta property="og:locale" content="ru_RU">
+<style>
+        :root {
+            --primary: #205583;
+            --accent: #13A0FF;
+            --green: #93C638;
+            --green-dark: #6fa020;
+            --bg-light: #f4f7fb;
+        }
+
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.65; color: #1a1a2e; }
+
+        /* ── Hero ── */
+        .hero {
+            background: linear-gradient(135deg, #205583 0%, #13A0FF 100%);
+            color: #fff;
+            padding: 4rem 1rem 3.5rem;
+            text-align: center;
+        }
+        .hero h1 { font-size: clamp(1.8rem, 5vw, 2.9rem); line-height: 1.15; margin-bottom: 1.2rem; }
+        .hero p.lead { font-size: clamp(1rem, 3vw, 1.25rem); max-width: 720px; margin: 0 auto 2rem; opacity: .95; }
+
+        /* ── Download button ── */
+        .btn-download {
+            display: inline-block;
+            background: var(--green);
+            color: #fff !important;
+            font-size: clamp(1rem, 3.5vw, 1.3rem);
+            font-weight: 700;
+            line-height: 1.35;
+            padding: 1.1rem 2.4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(76,175,81,.35);
+            transition: transform .25s, box-shadow .25s;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .btn-download:hover { transform: translateY(-4px); box-shadow: 0 14px 32px rgba(76,175,81,.45); }
+
+        /* ── Sections ── */
+        .section { padding: 3.5rem 1rem; }
+        .section-alt { background: var(--bg-light); }
+        .container { max-width: 900px; margin: 0 auto; }
+
+        /* ── Steps ── */
+        .steps { list-style: none; padding: 0; counter-reset: step; }
+        .steps li {
+            position: relative;
+            padding: .9rem 1rem .9rem 4rem;
+            margin-bottom: 1.4rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,.07);
+        }
+        .steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute; left: .9rem; top: 50%; transform: translateY(-50%);
+            width: 2.4rem; height: 2.4rem;
+            background: var(--primary); color: #fff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.1rem;
+        }
+
+        /* ── Comparison table ── */
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 12px; }
+        table { width: 100%; border-collapse: collapse; min-width: 520px; font-size: .95rem; }
+        thead th { background: var(--primary); color: #fff; padding: .75rem 1rem; text-align: left; }
+        tbody td { padding: .7rem 1rem; border-bottom: 1px solid #e0e8f0; }
+        tbody tr:nth-child(even) td { background: #f0f5fb; }
+        .tag-good { color: #2e7d32; font-weight: 600; }
+        .tag-bad  { color: #c62828; font-weight: 600; }
+        .tag-ok   { color: #e65100; font-weight: 600; }
+
+        /* ── Cards ── */
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem; margin-top: 2rem; }
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.5rem 1.2rem;
+            box-shadow: 0 3px 14px rgba(0,0,0,.09);
+            text-align: center;
+        }
+        .card .icon { font-size: 2.4rem; margin-bottom: .7rem; }
+        .card h4 { font-size: 1.05rem; margin: 0 0 .4rem; }
+        .card p { font-size: .92rem; color: #555; margin: 0; }
+
+        /* ── Reviews ── */
+        .reviews { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+        .review-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.3rem 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+        }
+        .review-card .stars { color: #f5a623; font-size: 1.1rem; margin-bottom: .5rem; }
+        .review-card .author { font-weight: 700; font-size: .95rem; }
+        .review-card .date { font-size: .82rem; color: #888; }
+        .review-card p { font-size: .92rem; color: #333; margin: .5rem 0 0; }
+
+        /* ── Rating bar ── */
+        .rating-summary { display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; }
+        .rating-big { font-size: 4rem; font-weight: 800; color: var(--primary); line-height: 1; }
+        .rating-bars { flex: 1; min-width: 200px; }
+        .bar-row { display: flex; align-items: center; gap: .6rem; margin-bottom: .35rem; font-size: .85rem; }
+        .bar-row .bar-bg { flex: 1; background: #e0e8f0; border-radius: 4px; height: 8px; }
+        .bar-row .bar-fill { background: #f5a623; border-radius: 4px; height: 8px; }
+
+        /* ── FAQ ── */
+        .faq details { margin-bottom: 1.1rem; border: 1px solid #d8e3ef; border-radius: 10px; padding: 0; overflow: hidden; }
+        .faq details summary { padding: .9rem 1.2rem; font-weight: 600; cursor: pointer; background: #fff; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        .faq details summary::after { content: "+"; font-size: 1.4rem; color: var(--primary); }
+        .faq details[open] summary::after { content: "−"; }
+        .faq details p { padding: .5rem 1.2rem 1.1rem; margin: 0; color: #333; font-size: .95rem; }
+
+        /* ── Trust badges ── */
+        .trust-badges { display: flex; flex-wrap: wrap; gap: .9rem; justify-content: center; margin: 2rem 0; }
+        .badge { background: #fff; padding: .55rem 1.1rem; border-radius: 30px; box-shadow: 0 2px 8px rgba(0,0,0,.1); font-size: .92rem; }
+
+        /* ── Promo block ── */
+        .promo-box {
+            background: linear-gradient(135deg, #205583, #13A0FF);
+            color: #fff;
+            border-radius: 18px;
+            padding: 2.2rem 2rem;
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .promo-box h3 { color: #fff; font-size: 1.5rem; margin-bottom: .8rem; }
+        .promo-code { display: inline-block; background: #fff; color: var(--primary); font-size: 2rem; font-weight: 900; padding: .4rem 1.8rem; border-radius: 10px; letter-spacing: 3px; margin: .8rem 0; }
+        .promo-box p { opacity: .92; font-size: 1rem; }
+
+        /* ── Compatibility ── */
+        .compat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .compat-item { background: #fff; border-radius: 10px; padding: 1rem 1.1rem; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+        .compat-item .ci-name { font-weight: 700; font-size: 1rem; }
+        .compat-item .ci-ver  { font-size: .85rem; color: #555; }
+        .compat-item .ci-ok   { font-size: 1.5rem; }
+
+        /* ── Author box (E-E-A-T) ── */
+        .author-box {
+            display: flex; gap: 1.2rem; align-items: flex-start;
+            background: #fff; border-radius: 14px; padding: 1.4rem; box-shadow: 0 2px 10px rgba(0,0,0,.08);
+            margin-top: 2rem;
+        }
+        .author-box .avatar { width: 70px; height: 70px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2rem; flex-shrink: 0; }
+        .author-box .info h4 { margin: 0 0 .3rem; font-size: 1.05rem; }
+        .author-box .info p  { margin: 0; font-size: .88rem; color: #555; }
+
+        /* ── Footer ── */
+        footer { background: #111; color: #aaa; padding: 3rem 1rem; font-size: .92rem; }
+        footer strong { color: #ddd; }
+        footer a { color: #77b; }
+
+        /* ── Helpers ── */
+        h2 { font-size: clamp(1.4rem, 4vw, 1.85rem); }
+        h3 { font-size: clamp(1.15rem, 3vw, 1.45rem); }
+        .text-center { text-align: center; }
+        .mt-1 { margin-top: 1rem; }
+        .mt-2 { margin-top: 2rem; }
+        .mt-3 { margin-top: 3rem; }
+        .highlight { background: #e8f4fd; border-left: 4px solid var(--accent); padding: .9rem 1.2rem; border-radius: 6px; font-size: .97rem; }
+
+        @media (max-width: 600px) {
+            .btn-download { padding: 1rem 1.6rem; }
+            .author-box { flex-direction: column; }
+            .rating-summary { flex-direction: column; align-items: flex-start; }
+        }
+    
+body{margin:0}.hero h1,.hero h2{color:white}nav{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 24px;background:#163e62;color:white}nav a{color:white;text-decoration:none;font-size:16px}nav div{display:flex;gap:20px;flex-wrap:wrap}.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:14px}.hero .btn-download{background:white;color:#205583!important;box-shadow:none}.section h2{color:#205583}.card p{font-size:16px}.faq details p{font-size:16px}.hero .lead{margin-top:20px!important}.section p{max-width:78ch}a{color:#205583}.legal{font-size:16px;color:#b8c7d8}.steps li::before{top:26px;transform:none}.notice{background:#e8f4fd;padding:20px;border-radius:12px}footer a{color:#b5dbff}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "1xBet на iPhone — практический справочник", "url": "https://1xbet-iphone.github.io/", "inLanguage": "ru", "dateModified": "2026-11-20", "description": "Независимый справочник по мобильной версии, установке и настройкам iOS."}</script></head><body><nav aria-label="Основная навигация"><strong>1XBET · IPHONE GUIDE</strong><div><a href="#options">Способы доступа</a><a href="#safari">Настройка Safari</a><a href="#faq">Вопросы</a></div></nav>
+<header class="hero"><div class="container"><p class="eyebrow">Независимый справочник · iPhone и iPad · 18+</p><h1>1xBet на iPhone:<br>разбираемся с мобильным доступом</h1><p class="lead">Сайт в браузере, иконка на экране или отдельное приложение — это разные способы использования iPhone. Здесь собраны понятные объяснения и порядок проверки настроек.</p><a class="btn-download" href="#options">Выбрать способ доступа</a><p class="mt-2">Редакция от 20 ноября 2026</p></div></header>
+<main><section class="section" id="options"><div class="container"><h2>С чего начать: сайт или приложение?</h2><p>Для просмотра мобильной страницы не требуется установочный файл. Сначала определите, что вам нужно: открыть сайт в Safari, сохранить к нему быстрый доступ или найти приложение конкретного издателя.</p><div class="cards"><article class="card"><div class="icon" aria-hidden="true">🌐</div><h3>Мобильная страница</h3><p>Открывается по адресу в браузере. Обновления интерфейса появляются на стороне сайта и не требуют загрузки из магазина.</p></article><article class="card"><div class="icon" aria-hidden="true">📱</div><h3>Иконка в Safari</h3><p>Даёт быстрый доступ с экрана «Домой». Возможность открытия в отдельном окне зависит от реализации самого сайта.</p></article><article class="card"><div class="icon" aria-hidden="true">📦</div><h3>Приложение для iOS</h3><p>Имеет собственные требования к устройству и доступности. Проверяйте название издателя и описание перед установкой.</p></article></div></div></section>
+<section class="section section-alt" id="safari"><div class="container"><h2>Как сохранить страницу на iPhone</h2><p>Если вам достаточно браузерной версии, можно начать с обычной закладки или ярлыка. Для этого не нужен файл APK.</p><ol class="steps mt-2"><li><strong>Откройте Safari.</strong> Перейдите на нужную страницу и дождитесь её загрузки.</li><li><strong>Проверьте адрес.</strong> Убедитесь, что открыли ожидаемый сайт, прежде чем вводить данные аккаунта.</li><li><strong>Откройте меню «Поделиться».</strong> Найдите пункт «На экран Домой». Расположение меню зависит от версии iOS.</li><li><strong>Сохраните название.</strong> Подтвердите добавление и проверьте новую иконку на домашнем экране.</li></ol><p class="highlight">Иконка сайта и нативное приложение — разные вещи. Ярлык сам по себе не добавляет функции, которых нет в веб-версии.</p></div></section>
+<section class="section"><div class="container"><h2>Что проверить перед установкой</h2><div class="table-wrap"><table><thead><tr><th>Проверка</th><th>На что обратить внимание</th></tr></thead><tbody><tr><td>Источник</td><td>Название издателя, адрес страницы и сведения в карточке приложения.</td></tr><tr><td>Совместимость</td><td>Минимальная версия iOS, доступное место и поддерживаемые устройства.</td></tr><tr><td>Формат файла</td><td>Android-пакет APK не предназначен для установки на iPhone.</td></tr><tr><td>Запрашиваемые права</td><td>Читайте описание разрешений и назначение профиля, если его предлагают установить.</td></tr><tr><td>Условия сервиса</td><td>Возрастные и региональные ограничения, правила аккаунта и обработки данных.</td></tr></tbody></table></div></div></section>
+<section class="section section-alt"><div class="container"><h2>Если страница работает неправильно</h2><div class="cards"><article class="card"><h3>Пустой экран</h3><p>Перезагрузите вкладку, проверьте сеть и попробуйте открыть страницу в новой вкладке. Сохраните важные данные перед очисткой истории.</p></article><article class="card"><h3>Не удаётся войти</h3><p>Проверьте раскладку клавиатуры и используйте восстановление доступа на самом сервисе. Этот справочник не обрабатывает пароли.</p></article><article class="card"><h3>Нет кнопки установки</h3><p>Проверьте сведения у издателя. Доступность приложения может отличаться для разных регионов и устройств.</p></article></div><p class="mt-2">При обращении в поддержку укажите модель iPhone, версию iOS, браузер и текст ошибки. Это помогает точнее описать проблему.</p></div></section>
+<section class="section" id="faq"><div class="container"><h2>Ответы на частые вопросы</h2><div class="faq mt-2"><details><summary>Нужно ли скачивать приложение, чтобы открыть сайт на iPhone?</summary><p>Нет. Мобильную страницу можно открыть в браузере. Наличие отдельного приложения и требования к нему уточняйте у издателя.</p></details><details><summary>Как добавить страницу на экран «Домой»?</summary><p>Откройте нужную страницу в Safari, нажмите «Поделиться» и выберите «На экран Домой». Такая иконка открывает сайт; она не подтверждает установку нативного приложения.</p></details><details><summary>Почему файл APK не устанавливается на iPhone?</summary><p>APK предназначен для Android. Для iPhone используйте совместимое приложение из доступного вам магазина или веб-версию.</p></details><details><summary>Что делать, если страница не загружается?</summary><p>Проверьте подключение, перезагрузите вкладку и убедитесь, что адрес введён правильно. Текущий адрес и доступность сервиса уточняйте в его поддержке.</p></details><details><summary>Какая версия iOS нужна?</summary><p>Требования зависят от выбранного приложения или сайта. Для приложения проверьте карточку издателя, а для веб-версии используйте обновлённый браузер.</p></details><details><summary>Это официальный сайт 1xBet?</summary><p>Нет. Это независимый информационный проект с материалами об использовании iPhone. Он не принимает платежи и не обслуживает игровые аккаунты.</p></details></div></div></section><section class="section section-alt" id="about"><div class="container"><h2>Об этом проекте</h2><p>1xbet-iphone.github.io — самостоятельная информационная страница. Мы объясняем различия между способами мобильного доступа и базовые настройки iPhone. Сайт не является представителем Apple или 1xBet.</p><p>Материал не обещает конкретную доступность приложения, размер бонуса или результат игры. Действующие условия, сведения об издателе и требования к устройству проверяйте у соответствующего сервиса.</p><p>Актуальный адрес этой страницы: <a href="https://1xbet-iphone.github.io/">https://1xbet-iphone.github.io/</a>.</p></div></section>
+<section class="section" id="privacy"><div class="container"><h2>Конфиденциальность</h2><p>На странице установлен счётчик Яндекс.Метрики 114414203 с Вебвизором, картой кликов и отслеживанием переходов. Он помогает анализировать посещения и взаимодействия с сайтом; при работе аналитики могут использоваться cookies и технические сведения о браузере. Подробнее — <a href="https://yandex.ru/legal/confidential/">политика конфиденциальности Яндекса</a>.</p><p>Форм регистрации, оплаты и ввода пароля на этой странице нет.</p></div></section></main>
+<footer><div class="container"><strong>1XBET · IPHONE GUIDE</strong><p>Независимые материалы о мобильном доступе и настройках iOS.</p><p class="legal">18+ · Азартные игры связаны с риском потери денег и развития зависимости.</p><p>© 2026 1xbet-iphone.github.io · <a href="#privacy">Конфиденциальность</a> · <a href="#about">О проекте</a></p></div></footer>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=114414203','ym');
+ym(114414203,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script><noscript><div><img src="https://mc.yandex.ru/watch/114414203" style="position:absolute;left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body></html>
